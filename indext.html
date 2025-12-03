@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Divine Flow</title>
-    <link rel="stylesheet" href="/BIBLE RANDOM GEN/CSS/biblegen.css" />
+    <link rel="stylesheet" href="/CSS/biblegen.css" />
     <!-- <script src="BIBLE RANDOM GEN/JAVASCRIPT/script.js"></script> -->
     <!-- Elegant Fonts -->
     <link
@@ -19,15 +19,10 @@
     <!-- header -->
     <div class="header">
       <h1>Divine Flow Randomizer</h1>
-      <img
-        src="/BIBLE RANDOM GEN/image/zacchimage.png"
-        alt="Inspired Coder"
-        class="avatar"
-      />
+      <img src="/image/zacchimage.png" alt="Inspired Coder" class="avatar" />
     </div>
 
-<p id="typeText"></p>
-
+    <p id="typeText"></p>
 
     <!-- QUOTE DISPLAY -->
     <div class="quote-container">
@@ -46,50 +41,47 @@
     </div>
 
     <audio id="bgMusic" loop>
-      <source src="/BIBLE RANDOM GEN/Ali_Mills_-_Canyon.mp3" type="audio/mpeg" />
+      <source src="/music/Ali_Mills_-_Canyon.mp3" type="audio/mpeg" />
     </audio>
 
     <script>
-const text = "DailyBread Randomizer gives you a fresh Bible verse every time you open it.\nInspiring you, guiding you, and strengthening your faith every day.";
+      const text =
+        "DailyBread Randomizer gives you a fresh Bible verse every time you open it.\nInspiring you, guiding you, and strengthening your faith every day.";
 
-let index = 0;
-let deleting = false;
+      let index = 0;
+      let deleting = false;
 
-function typeEffect() {
-  const display = document.getElementById("typeText");
+      function typeEffect() {
+        const display = document.getElementById("typeText");
 
-  // Replace \n with <br> for HTML line breaks
-  const formattedText = text.substring(0, index).replace(/\n/g, "<br>");
+        // Replace \n with <br> for HTML line breaks
+        const formattedText = text.substring(0, index).replace(/\n/g, "<br>");
 
-  display.innerHTML = formattedText;
+        display.innerHTML = formattedText;
 
-  if (!deleting) {
-    index++;
+        if (!deleting) {
+          index++;
 
-    if (index > text.length) {
-      deleting = true;
-      setTimeout(typeEffect, 1200);
-      return;
-    }
-  } else {
-    index--;
+          if (index > text.length) {
+            deleting = true;
+            setTimeout(typeEffect, 1200);
+            return;
+          }
+        } else {
+          index--;
 
-    if (index < 0) {
-      deleting = false;
-      index = 0;
-    }
-  }
+          if (index < 0) {
+            deleting = false;
+            index = 0;
+          }
+        }
 
-  setTimeout(typeEffect, deleting ? 40 : 60);
-}
+        setTimeout(typeEffect, deleting ? 40 : 60);
+      }
 
-window.onload = typeEffect;
+      window.onload = typeEffect;
 
-
-
-
-<!-- DIVINE QUOTES -->
-
+      <!-- DIVINE QUOTES -->
 
       const divineQuotes = [
         {
