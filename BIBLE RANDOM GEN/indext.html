@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Divine Flow</title>
+    <link rel="stylesheet" href="CSS/biblegen.css" />
+    <!-- <script src="BIBLE RANDOM GEN/JAVASCRIPT/script.js"></script> -->
+    <!-- Elegant Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="overlay"></div>
+
+    <!-- header -->
+    <div class="header">
+      <h1>Divine Flow Randomizer</h1>
+      <img
+        src="/BIBLE RANDOM GEN/image/zacchimage.png"
+        alt="Inspired Coder"
+        class="avatar"
+      />
+    </div>
+
+<p id="typeText"></p>
+
+
+    <!-- QUOTE DISPLAY -->
+    <div class="quote-container">
+      <div class="card" id="card">
+        <p class="quote-text" id="quote">Loading divine wisdom...</p>
+        <p class="quote-src" id="source"></p>
+      </div>
+    </div>
+
+    <!-- SEPARATE CONTROLS -->
+    <div class="controls">
+      <button id="toggleAutoBtn">Pause Auto</button>
+      <button id="newQuoteBtn">Another One</button>
+      <button id="shareBtn">Share</button>
+      <button id="musicBtn">Music On</button>
+    </div>
+
+    <audio id="bgMusic" loop>
+      <source src="/BIBLE RANDOM GEN/Ali_Mills_-_Canyon.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+const text = "DailyBread Randomizer gives you a fresh Bible verse every time you open it.\nInspiring you, guiding you, and strengthening your faith every day.";
+
+let index = 0;
+let deleting = false;
+
+function typeEffect() {
+  const display = document.getElementById("typeText");
+
+  // Replace \n with <br> for HTML line breaks
+  const formattedText = text.substring(0, index).replace(/\n/g, "<br>");
+
+  display.innerHTML = formattedText;
+
+  if (!deleting) {
+    index++;
+
+    if (index > text.length) {
+      deleting = true;
+      setTimeout(typeEffect, 1200);
+      return;
+    }
+  } else {
+    index--;
+
+    if (index < 0) {
+      deleting = false;
+      index = 0;
+    }
+  }
+
+  setTimeout(typeEffect, deleting ? 40 : 60);
+}
+
+window.onload = typeEffect;
+
+
+
+
+<!-- DIVINE QUOTES -->
+
+
+      const divineQuotes = [
+        {
+          text: "For I know the plans I have for you, declares the Lord.",
+          src: "Jeremiah 29:11",
+          bg: "https://i.pinimg.com/1200x/28/91/f3/2891f376eb5b05a0084bca215094a736.jpg",
+          color: "#fff8e1",
+        },
+        {
+          text: "The Lord is my shepherd; I shall not want",
+          src: "Psalm 23:1",
+          bg: "https://images.pexels.com/photos/70912/pexels-photo-70912.jpeg",
+          color: "#fff3e0",
+        },
+        {
+          text: "Be strong and courageous. Do not be afraid.",
+          src: "Deuteronomy 31:6",
+          bg: "https://images.pexels.com/photos/358136/pexels-photo-358136.jpeg",
+          color: "#ffffff",
+        },
+        {
+          text: "With God all things are possible.",
+          src: "Matthew 19:26",
+          bg: "https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg",
+          color: "#e0f7fa",
+        },
+        {
+          text: "Trust in the Lord with all your heart.",
+          src: "Proverbs 3:5",
+          bg: "https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg",
+          color: "#fffde7",
+        },
+        {
+          text: "The joy of the Lord is your strength.",
+          src: "Nehemiah 8:10",
+          bg: "https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg",
+          color: "#ffffff",
+        },
+        {
+          text: "Be still, and know that I am God.",
+          src: "Psalm 46:10",
+          bg: "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg",
+          color: "#f5f5f5",
+        },
+        {
+          text: "I can do all things through Christ.",
+          src: "Philippians 4:13",
+          bg: "https://images.pexels.com/photos/235615/pexels-photo-235615.jpeg",
+          color: "#fff9c4",
+        },
+        {
+          text: "The Lord will fight for you.",
+          src: "Exodus 14:14",
+          bg: "https://images.pexels.com/photos/374023/pexels-photo-374023.jpeg",
+          color: "#ffffff",
+        },
+        {
+          text: "No weapon formed against you shall prosper.",
+          src: "Isaiah 54:17",
+          bg: "https://images.pexels.com/photos/209710/pexels-photo-209710.jpeg",
+          color: "#fff8e1",
+        },
+        {
+          text: "God is within her, she will not fall.",
+          src: "Psalm 46:5",
+          bg: "https://images.pexels.com/photos/459301/pexels-photo-459301.jpeg",
+          color: "#fff3e0",
+        },
+        {
+          text: "Cast all your anxiety on Him.",
+          src: "1 Peter 5:7",
+          bg: "https://images.pexels.com/photos/206648/pexels-photo-206648.jpeg",
+          color: "#e8f5e9",
+        },
+        {
+          text: "The Lord is my light and my salvation.",
+          src: "Psalm 27:1",
+          bg: "https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg",
+          color: "#ffffff",
+        },
+        {
+          text: "Delight yourself in the Lord.",
+          src: "Psalm 37:4",
+          bg: "https://images.pexels.com/photos/355321/pexels-photo-355321.jpeg",
+          color: "#fffde7",
+        },
+        {
+          text: "Commit your work to the Lord.",
+          src: "Proverbs 16:3",
+          bg: "https://images.pexels.com/photos/450381/pexels-photo-450381.jpeg",
+          color: "#ffffff",
+        },
+        {
+          text: "Those who hope in the Lord will renew their strength.",
+          src: "Isaiah 40:31",
+          bg: "https://images.pexels.com/photos/358136/pexels-photo-358136.jpeg",
+          color: "#fff8e1",
+        },
+        {
+          text: "The Lord is my strength and my song.",
+          src: "Exodus 15:2",
+          bg: "https://images.pexels.com/photos/70912/pexels-photo-70912.jpeg",
+          color: "#fff3e0",
+        },
+        {
+          text: "In all your ways acknowledge Him.",
+          src: "Proverbs 3:6",
+          bg: "https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg",
+          color: "#ffffff",
+        },
+        {
+          text: "The Lord will make you the head.",
+          src: "Deuteronomy 28:13",
+          bg: "https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg",
+          color: "#e0f7fa",
+        },
+        {
+          text: "The Lord is my rock and my fortress.",
+          src: "Psalm 18:2",
+          bg: "https://images.pexels.com/photos/235615/pexels-photo-235615.jpeg",
+          color: "#fff9c4",
+        },
+        {
+          text: "Peace I leave with you.",
+          src: "John 14:27",
+          bg: "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg",
+          color: "#f5f5f5",
+        },
+        {
+          text: "The name of the Lord is a strong tower.",
+          src: "Proverbs 18:10",
+          bg: "https://images.pexels.com/photos/374023/pexels-photo-374023.jpeg",
+          color: "#ffffff",
+        },
+        {
+          text: "He will cover you with His feathers.",
+          src: "Psalm 91:4",
+          bg: "https://images.pexels.com/photos/459301/pexels-photo-459301.jpeg",
+          color: "#fff3e0",
+        },
+        {
+          text: "The Lord is near to the brokenhearted.",
+          src: "Psalm 34:18",
+          bg: "https://images.pexels.com/photos/206648/pexels-photo-206648.jpeg",
+          color: "#e8f5e9",
+        },
+        {
+          text: "I am the way, the truth, and the life.",
+          src: "John 14:6",
+          bg: "https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg",
+          color: "#ffffff",
+        },
+        {
+          text: "His mercy endures forever.",
+          src: "Psalm 136:1",
+          bg: "https://images.pexels.com/photos/355321/pexels-photo-355321.jpeg",
+          color: "#fffde7",
+        },
+        {
+          text: "The Lord is gracious and compassionate.",
+          src: "Psalm 145:8",
+          bg: "https://images.pexels.com/photos/450381/pexels-photo-450381.jpeg",
+          color: "#ffffff",
+        },
+        {
+          text: "Great is Thy faithfulness.",
+          src: "Lamentations 3:23",
+          bg: "https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg",
+          color: "#fffde7",
+        },
+        {
+          text: "The Lord is my helper.",
+          src: "Hebrews 13:6",
+          bg: "https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg",
+          color: "#e0f7fa",
+        },
+        {
+          text: "The Lord is near to the brokenhearted.",
+          src: "Psalm 34:18",
+          bg: "https://images.pexels.com/photos/206648/pexels-photo-206648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          text: "I am the way, the truth, and the life.",
+          src: "John 14:6",
+          bg: "https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          text: "His mercy endures forever.",
+          src: "Psalm 136:1",
+          bg: "https://images.pexels.com/photos/355321/pexels-photo-355321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          text: "The Lord is gracious and compassionate.",
+          src: "Psalm 145:8",
+          bg: "https://images.pexels.com/photos/450381/pexels-photo-450381.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          text: "Great is Thy faithfulness.",
+          src: "Lamentations 3:23",
+          bg: "https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          text: "For I know the plans I have for you, declares the Lord.",
+          src: "Jeremiah 29:11",
+          bg: "https://images.pexels.com/photos/355465/pexels-photo-355465.jpeg",
+          color: "#fff8e1",
+        },
+        {
+          text: "The Lord is my shepherd; I shall not want",
+          src: "Psalm 23:1",
+          bg: "https://images.pexels.com/photos/70912/pexels-photo-70912.jpeg",
+          color: "#fff3e0",
+        },
+        {
+          text: "Be strong and courageous. Do not be afraid.",
+          src: "Deuteronomy 31:6",
+          bg: "https://images.pexels.com/photos/358136/pexels-photo-358136.jpeg",
+          color: "#ffffff",
+        },
+        {
+          text: "With God all things are possible.",
+          src: "Matthew 19:26",
+          bg: "https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg",
+          color: "#e0f7fa",
+        },
+        {
+          text: "Trust in the Lord with all your heart.",
+          src: "Proverbs 3:5",
+          bg: "https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg",
+          color: "#fffde7",
+        },
+        {
+          text: "The joy of the Lord is your strength.",
+          src: "Nehemiah 8:10",
+          bg: "https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg",
+          color: "#ffffff",
+        },
+        {
+          text: "Be still, and know that I am God.",
+          src: "Psalm 46:10",
+          bg: "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg",
+          color: "#f5f5f5",
+        },
+        {
+          text: "I can do all things through Christ.",
+          src: "Philippians 4:13",
+          bg: "https://images.pexels.com/photos/235615/pexels-photo-235615.jpeg",
+          color: "#fff9c4",
+        },
+        {
+          text: "The Lord will fight for you.",
+          src: "Exodus 14:14",
+          bg: "https://images.pexels.com/photos/374023/pexels-photo-374023.jpeg",
+          color: "#ffffff",
+        },
+        {
+          text: "No weapon formed against you shall prosper.",
+          src: "Isaiah 54:17",
+          bg: "https://images.pexels.com/photos/209710/pexels-photo-209710.jpeg",
+          color: "#fff8e1",
+        },
+        {
+          text: "Cast all your anxiety on Him.",
+          src: "1 Peter 5:7",
+          bg: "https://images.pexels.com/photos/206648/pexels-photo-206648.jpeg",
+          color: "#e8f5e9",
+        },
+        {
+          text: "The Lord is my light and my salvation.",
+          src: "Psalm 27:1",
+          bg: "https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg",
+          color: "#ffffff",
+        },
+        {
+          text: "Delight yourself in the Lord.",
+          src: "Psalm 37:4",
+          bg: "https://images.pexels.com/photos/355321/pexels-photo-355321.jpeg",
+          color: "#fffde7",
+        },
+        {
+          text: "Commit your work to the Lord.",
+          src: "Proverbs 16:3",
+          bg: "https://images.pexels.com/photos/450381/pexels-photo-450381.jpeg",
+          color: "#ffffff",
+        },
+        {
+          text: "Those who hope in the Lord will renew their strength.",
+          src: "Isaiah 40:31",
+          bg: "https://images.pexels.com/photos/358136/pexels-photo-358136.jpeg",
+          color: "#fff8e1",
+        },
+        {
+          text: "The Lord is my strength and my song.",
+          src: "Exodus 15:2",
+          bg: "https://images.pexels.com/photos/70912/pexels-photo-70912.jpeg",
+          color: "#fff3e0",
+        },
+        {
+          text: "In all your ways acknowledge Him.",
+          src: "Proverbs 3:6",
+          bg: "https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg",
+          color: "#ffffff",
+        },
+        {
+          text: "The Lord will make you the head.",
+          src: "Deuteronomy 28:13",
+          bg: "https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg",
+          color: "#e0f7fa",
+        },
+        {
+          text: "God is love.",
+          src: "1 John 4:8",
+          bg: "https://images.pexels.com/photos/355465/pexels-photo-355465.jpeg",
+          color: "#fff8e1",
+        },
+      ];
+
+      // DOM
+      const quoteEl = document.getElementById("quote");
+      const sourceEl = document.getElementById("source");
+      const card = document.getElementById("card");
+      const body = document.body;
+      const toggleAutoBtn = document.getElementById("toggleAutoBtn");
+      const newQuoteBtn = document.getElementById("newQuoteBtn");
+      const shareBtn = document.getElementById("shareBtn");
+      const musicBtn = document.getElementById("musicBtn");
+      const audio = document.getElementById("bgMusic");
+
+      let autoInterval = null;
+      let isAuto = false;
+      let musicPlaying = true;
+
+      // Preload all backgrounds
+      divineQuotes.forEach((q) => {
+        const img = new Image();
+        img.src = q.bg;
+      });
+
+      // Get random quote
+      function getRandomQuote() {
+        return divineQuotes[Math.floor(Math.random() * divineQuotes.length)];
+      }
+
+      // Show quote with background + text color
+      function showDivineQuote() {
+        const q = getRandomQuote();
+
+        card.classList.remove("visible");
+
+        setTimeout(() => {
+          quoteEl.textContent = `"${q.text}"`;
+          sourceEl.textContent = `— ${q.src}`;
+          body.style.backgroundImage = `url('${q.bg}')`;
+
+          // Auto text color
+          quoteEl.style.color = q.color;
+          sourceEl.style.color = q.color;
+          document.querySelector("h1").style.color = q.color;
+
+          card.classList.add("visible");
+        }, 500);
+      }
+
+      // Auto system
+      function startAuto() {
+        if (autoInterval) clearInterval(autoInterval);
+        autoInterval = setInterval(showDivineQuote, 6000); // Every 6 sec
+        toggleAutoBtn.textContent = "Pause Auto";
+        toggleAutoBtn.classList.remove("pause");
+        isAuto = true;
+      }
+
+      function stopAuto() {
+        if (autoInterval) clearInterval(autoInterval);
+        toggleAutoBtn.textContent = "Resume Auto";
+        toggleAutoBtn.classList.add("pause");
+        isAuto = false;
+      }
+
+      // Events
+      toggleAutoBtn.addEventListener("click", () =>
+        isAuto ? stopAuto() : startAuto()
+      );
+      newQuoteBtn.addEventListener("click", () => {
+        showDivineQuote();
+        if (!isAuto) startAuto();
+      });
+
+      shareBtn.addEventListener("click", () => {
+        const text = `${quoteEl.textContent} ${sourceEl.textContent}\n\nDivine Flow`;
+        if (navigator.share) {
+          navigator.share({ text }).catch(() => copy(text));
+        } else {
+          copy(text);
+        }
+      });
+
+      function copy(text) {
+        navigator.clipboard.writeText(text).then(() => alert("Copied!"));
+      }
+
+      musicBtn.addEventListener("click", () => {
+        if (musicPlaying) {
+          audio.pause();
+          musicBtn.textContent = "Music Off";
+          musicBtn.classList.add("off");
+        } else {
+          audio.play();
+          musicBtn.textContent = "Music On";
+          musicBtn.classList.remove("off");
+        }
+        musicPlaying = !musicPlaying;
+      });
+
+      // Start
+      setTimeout(() => {
+        showDivineQuote();
+        startAuto();
+        audio.play().catch(() => {});
+      }, 700);
+    </script>
+  </body>
+</html>
