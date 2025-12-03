@@ -5,6 +5,7 @@
   "hints": {
     "meta-viewport": "off",
     "detect-css-reflows/composite": "off",
-    "detect-css-reflows/paint": "off"
+    "detect-css-reflows/paint": "off",
+    "button-type": "off"
   }
 }
