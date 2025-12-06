@@ -447,7 +447,7 @@
       // Auto system
       function startAuto() {
         if (autoInterval) clearInterval(autoInterval);
-        autoInterval = setInterval(showDivineQuote, 6000); // Every 6 sec
+        autoInterval = setInterval(showDivineQuote, 6000);
         toggleAutoBtn.textContent = "Pause Auto";
         toggleAutoBtn.classList.remove("pause");
         isAuto = true;
@@ -495,7 +495,7 @@
         musicPlaying = !musicPlaying;
       });
 
-      // Start
+      
       setTimeout(() => {
         showDivineQuote();
         startAuto();

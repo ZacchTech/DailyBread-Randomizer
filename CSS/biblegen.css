@@ -242,3 +242,75 @@
 
 }
 
+
+/* RESPONSIVE  */
+
+@media screen and (max-width: 768px) {
+
+  body {
+    padding: 1rem;
+    background-position: center;
+    background-size: cover;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  #typeText {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .avatar {
+    width: 90px;
+    height: 90px;
+    border-width: 6px;
+  }
+
+  .card {
+    width: 95%;
+    padding: 1.2rem;
+    margin-top: 1.3rem;
+  }
+
+  .quote-text {
+    font-size: 1.15rem;
+    line-height: 1.4;
+  }
+
+  .quote-src {
+    font-size: 0.95rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .controls button {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+}
+
+  /* PHONE SIDE */
+
+  @media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .quote-text {
+    font-size: 1.05rem;
+  }
+
+  .avatar {
+    width: 75px;
+    height: 75px;
+  }
+}
